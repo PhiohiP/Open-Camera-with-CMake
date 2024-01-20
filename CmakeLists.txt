@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(MyCMakeProject)
+
+# Cari OpenCV
+find_package(OpenCV REQUIRED)
+
+# File sumber
+add_executable(MyCMakeProject main.cpp)
+
+# Tambahkan include directory OpenCV
+target_include_directories(MyCMakeProject PRIVATE ${OpenCV_INCLUDE_DIRS})
+
+# Tambahkan library OpenCV
+target_link_libraries(MyCMakeProject PRIVATE ${OpenCV_LIBS})
+
